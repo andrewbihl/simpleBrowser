@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzr-BI-Ci4">
+                                <rect key="frame" x="0.0" y="49" width="600" height="551"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="3AG-Ic-jo0"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="e6V-25-Ahc">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uJL-N1-Kgb">
+                                <rect key="frame" x="74" y="20" width="506" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ECo-Vv-P3j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bbq-0H-NC3"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p4o-4e-F58">
+                                <rect key="frame" x="20" y="22" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Flz-h1-u53"/>
+                                    <constraint firstAttribute="width" constant="25" id="dYy-q7-BFo"/>
+                                </constraints>
+                                <state key="normal" image="backButton"/>
+                                <connections>
+                                    <action selector="onBackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hdK-BO-zqh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e6V-25-Ahc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1oZ-8c-6cX"/>
+                            <constraint firstItem="p4o-4e-F58" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7JR-0B-bcS"/>
+                            <constraint firstItem="uJL-N1-Kgb" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AOD-zm-5xi"/>
+                            <constraint firstItem="qzr-BI-Ci4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="49" id="J9W-8p-IFi"/>
+                            <constraint firstAttribute="trailing" secondItem="qzr-BI-Ci4" secondAttribute="trailing" id="ObZ-gE-yiI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qzr-BI-Ci4" secondAttribute="bottom" id="U7F-Hg-4Rr"/>
+                            <constraint firstItem="qzr-BI-Ci4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XvW-vR-fk9"/>
+                            <constraint firstItem="uJL-N1-Kgb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jY2-Yf-7zu"/>
+                            <constraint firstItem="uJL-N1-Kgb" firstAttribute="leading" secondItem="p4o-4e-F58" secondAttribute="trailing" constant="29" id="jkT-le-SMi"/>
+                            <constraint firstItem="e6V-25-Ahc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s7s-p3-wI0"/>
+                            <constraint firstItem="p4o-4e-F58" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="2" id="yQC-bx-8gr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="e6V-25-Ahc" id="4Oe-V5-Twv"/>
+                        <outlet property="backButton" destination="p4o-4e-F58" id="9A3-YW-J0A"/>
+                        <outlet property="urlTextField" destination="uJL-N1-Kgb" id="XK9-eh-KeA"/>
+                        <outlet property="webView" destination="qzr-BI-Ci4" id="glD-Tc-yz2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="306"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="backButton" width="128" height="128"/>
+    </resources>
+</document>
